@@ -6,6 +6,20 @@ OpenMRS is a patient-based medical record system focusing on giving providers a 
 
 The mission of OpenMRS is to improve health care delivery in resource-constrained environments by coordinating a global community that creates a robust, scalable, user-driven, open source medical record system platform.
 
+## About this branch
+* This branch is customized for [:eyes: Drishti](https://github.com/E-Health/drishti)
+
+## Changes
+
+1. Lazy loading of patient identifiers set to false.
+```xml
+		<set name="identifiers" lazy="false" cascade="all-delete-orphan"
+			table="patient_identifier" inverse="true" sort="natural">
+			<key not-null="true" column="patient_id" />
+			<one-to-many class="PatientIdentifier" />
+		</set>
+```
+
 ####Table of Contents
 
 1. [Build](#build)
